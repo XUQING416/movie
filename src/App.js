@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Tabbars from "./Tabbar"
 
 function App() {
   return (
     <div>
-      111
+      <Tabbars />
     </div>
   );
 }

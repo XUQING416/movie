@@ -1,0 +1,6 @@
+body{
+    margin: 0;padding: 0
+}
+.Movies-header{
+    height: 100px;background: red;text-align: center;color: white;font: 38px/100px "";
+}
