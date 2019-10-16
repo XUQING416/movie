@@ -149,6 +149,9 @@ h1,h2,h3,h4,h5,h6 {font-weight: normal;font-size: 100%;}
 .actorspictrueshowa li{
     padding: 5px 4px;
 }
+.actorspictrueshowa li img{
+    height: 100px;
+}
 .buywrapper{
     margin-top: 18px;
     display: flex;
