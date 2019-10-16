@@ -1,20 +1,11 @@
 const proxy = require('http-proxy-middleware');
 module.exports = function (app) {
-    app.use(proxy('/b', {
-        target: 'http://m.maoyan.com',
-        secure: false,
-        changeOrigin: true,
+    app.use(proxy('/maoyan', {
+        target:"http://m.maoyan.com/ajax",
+        secure: false,
+        changeOrigin: true,
         pathRewrite: {
-            "^/b": ""
+            "^/maoyan": ""
         }
     }));
-    // app.use(proxy('/a', {
-    //     target: 'https://i.meituan.com',
-    //     secure: false,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //         "^/a": ""
-    //     }
-    // }));
-    
-};  
+};

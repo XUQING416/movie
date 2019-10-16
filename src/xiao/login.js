@@ -1,5 +1,5 @@
 import React from "react"
-import "./my.css"
+import mycss from './my.module.css'
 import store from "./store"
 import { observer } from "mobx-react"
 
@@ -66,7 +66,7 @@ class Login extends React.Component{
   render(){
     return(
       <div >
-        <div className="headxu" ><span style={{display:"block",float:"left",height:"100px",width:"100px",background:'url(' + require("./返回.png") + ') no-repeat center center'}} 
+        <div className={mycss.headxu} ><span style={{display:"block",float:"left",height:"100px",width:"100px",background:'url(' + require("./返回.png") + ') no-repeat center center'}} 
         onClick={this.fallback.bind(this)}></span>猫眼电影</div>
         <Tabs tabs={tabs}
           initialPage={0}
@@ -78,7 +78,7 @@ class Login extends React.Component{
           // onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
         >
           <div>
-            <ul className="ulxu">
+            <ul className={mycss.ulxu}>
               <li>
                 <input type="text" value={store.email} placeholder="账户名/手机号/Email"
                 onChange={this.changeEmail}/>
@@ -94,7 +94,7 @@ class Login extends React.Component{
             Content of second tab
           </div>
         </Tabs>
-        <div className="footerxu">
+        <div className={mycss.footerxu}>
           <span onClick={this.register.bind(this)}>立即注册</span>   
           <span>找回密码</span>
         </div>

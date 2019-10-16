@@ -18,7 +18,6 @@ export const Verify = (params)=>Axios({
     params
 })
 Axios.interceptors.response.use(function (config) {
-    console.log(config)
     if (!config.data.state && config.data.msg == "校验失败") {
         //1.退到登入界面
         //2.清空localstorage
@@ -26,7 +25,7 @@ Axios.interceptors.response.use(function (config) {
         localStorage.removeItem("uId")
         localStorage.removeItem("nickname")  
         window.location.href="/login"
-        alert("用户信息过期请重新登入") 
+        alert("用户信息过期请重新登入")
 
         return config
     } else {

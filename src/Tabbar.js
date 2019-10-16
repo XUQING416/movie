@@ -1,81 +1,78 @@
 import React from "react"
 import { TabBar } from 'antd-mobile';
 import { withRouter,Route} from "react-router-dom"
-
+import Movies from "./Xu/Movies"
+import Cinemas from "./cinemas/Cinemas";
 import My from "./xiao/my"
-
-@withRouter 
+// import CinemasDetail from "./cinemas/CinemasDetail"
 class Tabbars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: '',
+      selectedTab: '/movies',
       hidden: false,
       fullScreen: false,
     };
   }
     componentDidMount(){
      
-      
-      let path = this.props.location.pathname
-      if(path == "/my"){
-          if(localStorage.token){
-          this.props.history.push("/my")
-          this.setState({
-          selectedTab: "/my"
-        })}else{this.props.history.push("/login")}
-      }else{
-        this.props.history.push(path)
-      }
-
-      
-      if (path == "/register"||path == "/login") {
-        this.setState({
-        hidden: true
-        })
-      }else{
-        this.setState({
-        hidden: false,    
-        })
-      }
-        console.log(path)
-      this.setState({
-        selectedTab: path
-      })
-
-        
-        // if(path == "/"){
-        //   if(localStorage.token){
-        //   this.props.history.push("/my")
-        //   this.setState({
-        //     selectedTab: "/my"
-        //   })}else{this.props.history.push("/login")}
-        // }
-    }
-    componentWillReceiveProps(nextProps) {
-
-      let path = nextProps.location.pathname
+    
  
-      
-    if (path == "/register"||path == "/login") {
+  let path = this.props.location.pathname
+
+  
+  if(path == "/my"){
+      if(localStorage.token){
+      this.props.history.push("/my")
       this.setState({
-        hidden: true
-      })
-    }else{
-      this.setState({
-        hidden: false,  
-      })
-    }
+      selectedTab: "/my"
+    })}else{this.props.history.push("/login")}
+  }else{
+    this.props.history.push(path)
   }
+  if(path=="/"){
+    this.props.history.push("/movies") 
+  }
+  
+  if (path == "/register"||path == "/login"||path == "/moviedetial") {
+    this.setState({
+    hidden: true
+    })
+  }else{
+    this.setState({
+    hidden: false,    
+    })
+  }
+    console.log(path)
+  this.setState({
+    selectedTab: path
+  })
 
+}
+componentWillReceiveProps(nextProps) {
 
-
-
+  let path = nextProps.location.pathname
+  // if(path=="/"){
+  //   this.setState({
+  //     hidden: false,
+  //     selectedTab: "movies"
+  //   })
     
-    
-    
+  // }
+  
+if (path == "/register"||path == "/login"||path == "/moviedetial") {
+  this.setState({
+    hidden: true,
+    selectedTab: path
+  })
+}else{
+  this.setState({
+    hidden: false,  
+    selectedTab: path
+  })
+}
 
-
+}
   render() {
     return (
       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
@@ -85,90 +82,69 @@ class Tabbars extends React.Component {
           barTintColor="white"
           hidden={this.state.hidden}
         >
+
           <TabBar.Item
-            title="Life"
-            key="Life"
+            title="电影"
+            key="movies"
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+              background: 'url('+require("./Xu/img/1.png")+') center center /  21px 21px no-repeat' }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+              background: 'url('+require("./Xu/img/2.png")+') center center /  21px 21px no-repeat' }}
             />
             }
-            selected={this.state.selectedTab === 'blueTab'}
-            badge={1}
+            selected={this.state.selectedTab === '/movies'}
+           
             onPress={() => {
-              this.setState({
-                selectedTab: 'blueTab',
-              });
+              this.props.history.push("/movies")
+              
             }}
             data-seed="logId"
           >
-          
-          </TabBar.Item>
+            <Route path="/movies" component={Movies}/>
+            </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-              />
+            
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url('+require("./cinemas/imgs/影院A (2).png")+') center center /  21px 21px no-repeat' }}
+            />
             }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Koubei"
-            key="Koubei"
-            badge={'new'}
-            selected={this.state.selectedTab === 'redTab'}
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url('+require("./cinemas/imgs/影院A (1).png")+') center center /  21px 21px no-repeat' }}
+            />}
+            title="影院"
+            key="cinemas"
+            selected={this.state.selectedTab === '/cinemas'}
             onPress={() => {
-              this.setState({
-                selectedTab: 'redTab',
-              });
+              
+            this.props.history.push('/cinemas')
             }}
             data-seed="logId1"
           >
-        
+          <Route path="/cinemas" component={Cinemas} />
+          {/* <Route path="/detail" component={CinemasDetail}  /> */}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-              />
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url('+require("./xiao/img/my1.png")+') center center /  21px 21px no-repeat' }}
+            />
             }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Friend"
-            key="Friend"
-            dot
-            selected={this.state.selectedTab === 'greenTab'}
-            onPress={() => {
-              this.setState({
-                selectedTab: 'greenTab',
-              });
-            }}
-          >
-      
-          </TabBar.Item >
-          <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url('+require("./xiao/img/my2.png")+') center center /  21px 21px no-repeat' }}
+            />}
             title="My"
             key="my"
             selected={this.state.selectedTab === '/my'}
@@ -196,4 +172,4 @@ class Tabbars extends React.Component {
   }
 }
 
-export default Tabbars
+export default withRouter(Tabbars)

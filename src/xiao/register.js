@@ -1,6 +1,6 @@
 import React from "react"
 import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import "./my.css"
+import mycss from './my.module.css'
 import {Register} from "./api"
 import { withRouter} from "react-router-dom"
 @withRouter
@@ -51,8 +51,8 @@ class Registered extends React.Component{
 
     render(){
         return (<div>
-            <div className="headxu"><span style={{display:"block",float:"left",height:"100%",width:"100px",background:'url(' + require("./返回.png") + ') no-repeat center center'}} onClick={this.fallback.bind(this)}></span>猫眼电影</div>
-            <ul className="ulxu">
+            <div className={mycss.headxu}><span style={{display:"block",float:"left",height:"100%",width:"100px",background:'url(' + require("./返回.png") + ') no-repeat center center'}} onClick={this.fallback.bind(this)}></span>猫眼电影</div>
+            <ul className={mycss.ulxu}>
                 <li style={{marginBottom:"20px"}}>
                     <input type="text" value={this.state.nickname} placeholder="昵称"
                     onChange={this.changeNick.bind(this)}/>

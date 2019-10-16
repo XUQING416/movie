@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+// import {Provider} from "mobx-react"
+// import Store from './cinemas/store/index'
 import App from './App';
-import "lib-flexible";
+import "lib-flexible"
 import "./all.css";
 import * as serviceWorker from './serviceWorker';
 import Login from './xiao/login.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />
+    , document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change

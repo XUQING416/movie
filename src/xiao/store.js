@@ -1,6 +1,6 @@
 import { observable, action,runInAction} from "mobx"
 import {Login,Verify} from "./api";
-import "./my.css"
+// import mycss from './my.module.css'
 
 class store {
     @observable email="zlz"
@@ -8,6 +8,7 @@ class store {
     @observable nickname=localStorage.getItem("nickname")
     @observable token=localStorage.getItem("token")
     @observable uId = localStorage.getItem("uId")
+    @observable id =  localStorage.id
     @action async getPersonal () {              
         let data = []
         await Login({"username":this.email,"password":this.password}) 

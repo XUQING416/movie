@@ -1,5 +1,7 @@
 import React from "react"
 import './Movies.css';
+import TabExample from "./M2"
+import SouInput from "./Sou"
 class Movies extends React.Component{
 
 
@@ -9,8 +11,9 @@ class Movies extends React.Component{
                 <div className="Movies-header">
                     猫 眼 电 影
                 </div>
+                <SouInput />
                 <div className="Movies-main">
-                    
+                    <TabExample />
                 </div>
             </div>
         )
