@@ -1,43 +1,80 @@
 import React from "react"
 import { TabBar } from 'antd-mobile';
+import { withRouter,Route} from "react-router-dom"
 
+import My from "./xiao/my"
+
+@withRouter 
 class Tabbars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: '',
       hidden: false,
       fullScreen: false,
     };
   }
+    componentDidMount(){
+     
+      
+      let path = this.props.location.pathname
+      if(path == "/my"){
+          if(localStorage.token){
+          this.props.history.push("/my")
+          this.setState({
+          selectedTab: "/my"
+        })}else{this.props.history.push("/login")}
+      }else{
+        this.props.history.push(path)
+      }
 
-  renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              hidden: !this.state.hidden,
-            });
-          }}
-        >
-          Click to show/hide tab-bar
-        </a>
-        <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              fullScreen: !this.state.fullScreen,
-            });
-          }}
-        >
-          Click to switch fullscreen
-        </a>
-      </div>
-    );
+      
+      if (path == "/register"||path == "/login") {
+        this.setState({
+        hidden: true
+        })
+      }else{
+        this.setState({
+        hidden: false,    
+        })
+      }
+        console.log(path)
+      this.setState({
+        selectedTab: path
+      })
+
+        
+        // if(path == "/"){
+        //   if(localStorage.token){
+        //   this.props.history.push("/my")
+        //   this.setState({
+        //     selectedTab: "/my"
+        //   })}else{this.props.history.push("/login")}
+        // }
+    }
+    componentWillReceiveProps(nextProps) {
+
+      let path = nextProps.location.pathname
+ 
+      
+    if (path == "/register"||path == "/login") {
+      this.setState({
+        hidden: true
+      })
+    }else{
+      this.setState({
+        hidden: false,  
+      })
+    }
   }
+
+
+
+
+    
+    
+    
+
 
   render() {
     return (
@@ -72,7 +109,7 @@ class Tabbars extends React.Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+          
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -100,7 +137,7 @@ class Tabbars extends React.Component {
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+        
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -127,21 +164,31 @@ class Tabbars extends React.Component {
               });
             }}
           >
-            {this.renderContent('Friend')}
-          </TabBar.Item>
+      
+          </TabBar.Item >
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
             selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
             title="My"
             key="my"
-            selected={this.state.selectedTab === 'yellowTab'}
+            selected={this.state.selectedTab === '/my'}
             onPress={() => {
+              if(localStorage.token){
+              this.props.history.push("/my")
+            }else
+            {
+              this.props.history.push("/login")
+            }
+
               this.setState({
-                selectedTab: 'yellowTab',
+                selectedTab: '/my',
               });
             }}
-          >
-            {this.renderContent('My')}
+          > 
+          
+          <Route path="/my" component={My} />  
+          
+            
           </TabBar.Item>
         </TabBar>
       </div>
