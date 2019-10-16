@@ -1,0 +1,53 @@
+html,body{margin: 0;padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;font-size: 100%;}
+.title line-ellipsis{
+    padding:13px 15px 13px 0;
+    border-top: 1px solid red;
+}
+.line-ellipsis{
+    padding: 13px 15px 13px 15px;
+}
+.cinema-list{
+    border: 1px solid red;
+}
+.titlefist{
+    line-height: 24px;
+    font-size: 16px;
+    color: #000;
+    height: 24px;
+}
+.titlesecond{
+    font-size: 18px;
+    color: #f03d37;
+    padding-left:10px;
+}
+.titlenig{
+    display: flex;
+}
+.titleadr{
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+.titleadr .titleadrone{
+    /* padding-right: 15px;  */
+}
+.zhekou{
+    height: 17px;
+    line-height: 17px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.litlepic{
+    display: flex;
+    color: #999;
+    margin-bottom: 4px;
+}
+.min-show{
+    padding: 0 15px 0 0;
+    margin-right: -15px;
+    line-height: 1.5;
+    font-size: 12px;
+    opacity: 0.5;
+}

@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    margin: 0;
+    padding: 0;
+}
+.div{
+    background-color: white;
+    padding-left: 30px;line-height: 24px;
+}
+.li{
+    border-bottom: 0.5px solid darkgrey;
+   padding: 20px 0;
+}
+.h{
+    font-size:16px;
+    line-height: 24px;
+    color:#000;
+}
+.price{
+    color: red;
+    font-size: 18px;
+    
+}
+.y{
+    margin: 0 0 0 3px;
+    color:#f03d37;
+    font-size: 10px;
+}
+.addr{
+    color:#666;
+    font-size: 14px;
+}
+.dis{
+    display: inline-block;
+    margin-left: 5px;
+    color:#666;
+}
+
+.endosre{
+    color:#589daf;
+    border:1px solid #589daf;
+    margin-left: 0 5px;
+    font-size: 10px;
+}
+.s{
+    color: #f90;
+    border:1px solid #f90;
+    margin-left: 0 5px;
+    font-size: 10px;
+}
+.tag{
+    font-size: 12px;
+    color:#999;
+}
+.navheader{
+    width:100%; height: 50px;background: red;text-align: center;color: white;font: 24px/50px "";
+
+    overflow: hidden;
+}
+.city{
+   
+   overflow: hidden;
+   
+    
+}
+
+.city-name{
+    font-size: 20px;
+    color:#666;
+    width: 100px;
+    padding: 0 60px;
+    height: 40px;
+    line-height: 60px;
+}
+.search-ipt{
+    background-color: #fff;
+    width: 400px;
+    height: 40px;
+   
+  line-height: 60px;
+  margin: 10px 30px;
+}
+
+.multi-top-nav-bar{
+    color:#e54847;
+    font-size: 16px;
+}

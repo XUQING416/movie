@@ -2,5 +2,56 @@ body{
     margin: 0;padding: 0
 }
 .Movies-header{
-    height: 100px;background: red;text-align: center;color: white;font: 38px/100px "";
+   width:100%; height: 50px;background: red;text-align: center;color: white;font: 24px/50px "";
+}
+.Movies-input{
+    height: 40px;
+}
+.Movies-input input{
+    height: 30px;margin: 5px 0 5px 30px ;width: 80%;font:14px/30px ""
+}
+.Movies-input button{
+    background: red;color: white;width: 20%;height: 30px;
+}
+.M3-div1{
+    border-bottom:0.5px solid darkgrey;display:flex;
+}
+.M3-div2{
+    width:50%;margin-left:10px;padding-top: 20px;line-height: 22px;
+}
+.M3-div2-h3{
+    font: 600 18px/30px "";
+}
+.M3-div2-span{
+    font-size:12px;background:skyblue
+}
+.M3-div2-span2{
+    color:red
+}
+.M3-btn{
+    margin:50px 10px ;width:50px;height:28px;background:red;color:white;
+}
+.M4-div1{
+    padding-top: 20px;list-style: none; margin-bottom: 30px; background: #fff ;padding-left:40px;overflow:hidden
+}
+.M4-div2{
+    display: inline-block; width: 48%; overflow: hidden; margin: 5px 0;line-height: 22px;
+}
+.M4-div2-span{
+     font-size: 24px; background: skyblue
+}
+.M5-div1{
+    border-bottom: 0.5px solid darkgrey; display: flex
+}
+.M5-div2{
+    width:50%;margin-left:10px;padding-top: 20px;line-height: 24px;
+}
+.M5-div2-span1{
+     font-size: 12px; background: skyblue
+}
+.M5-btn{
+    margin: 60px 0;background: skyblue;color: white;width:50px;height:28px;
+}
+.imgaa{
+   height: 110px;margin: 15px;
 }

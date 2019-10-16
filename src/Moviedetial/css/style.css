@@ -1,0 +1,92 @@
+html,body{margin: 0;padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;font-size: 100%;}
+#header{display: flex;background-color: #e54847;color: #fff;height: 51.5px;}
+.headright{font-size: 18px;text-align: center;margin: 0px 0px;width: 270.2px;line-height: 51.5px;}
+.headright h1{margin: 0px 0px;}
+.headleft{height: 50px;width: 52.5px;text-align: center;font-size: 30px;
+    padding-top: 8px;
+}
+.back{}
+.logo-img{
+    margin: 0px 6px 0px 11px;
+}
+.download-header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between */
+}
+.info-wrapperr{
+    /* height: 42px; */
+}
+.info-wrapperr .title{color: #333;font-size: 15px;font-weight: 600;}
+.link-btn{
+    display: flex;
+    justify-content: center;
+    width: 96px;
+    height: 42px;
+    background-color: #f03d37 !important;
+    border: 1px solid #f03d37;
+    /* line-height: 42px; */
+    align-items: center;
+    border-radius: 22px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin-left:95px ;
+    
+}
+
+.detail-box{
+    color: #fff;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 200px;
+    position: relative;
+    background-color: rgba(65,81,94,0.7);
+}
+.poster{
+    padding-left: 15px;
+    padding-right:10px;
+    padding-top: 20px;
+    
+}
+.detail-title{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.detailsecond{
+    padding-top: 10px;
+    opacity: 0.8;
+    font-size: 12px
+}
+.detailthird{
+    padding-top: 10px;
+    opacity: 0.8;
+    color: #fc0;
+    font-size: 18px;
+    font-weight: 700;
+}
+.detailforth{
+    padding-top: 10px;
+    opacity: 0.8;
+}
+.detailfive{
+    padding-top: 10px;
+    opacity: 0.8;
+}
+.detailsixth{
+    padding-top: 10px;
+    opacity: 0.8;
+}
+.detail-content{
+
+}
+
+.arrow-g{
+    position: absolute;
+    top: 50%;
+}
+
