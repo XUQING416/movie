@@ -85,3 +85,12 @@ body{
     padding: 0 3px;
     margin-top: 2px;
 }
+.C2-div1{
+    text-align: left;
+}
+.C2-div1-p{
+    text-align: left;margin-left: -100px;padding: 10px;font-size: 16px;
+}
+.C2-div2{
+    padding: 5px;font-size: 14px;margin-right: -50px;
+}

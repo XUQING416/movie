@@ -34,8 +34,15 @@ export const getmov4 = (params) => axios({
 
 
 
+
 export const sou = (params)=> axios({
     url: "/maoyan/search",
+    methods: "get",
+    params
+})
+
+export const citya =(params)=>axios({
+    url:"http://zhouxunwang.cn/data/?id=104&key=BL6U+4liSdj+h5iO8I0wR2rBPQTgsJeZ/pxz7fk&ske=1",
     methods: "get",
     params
 })

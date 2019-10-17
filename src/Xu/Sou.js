@@ -22,18 +22,13 @@ import { sou} from "./api"
 import store from "../xiao/store"
 import { observer } from "mobx-react"
 
+
 // import PropTypes from 'prop-types';
 import JSONP from  'jsonp'
+
  
 //封装jonsp为promise对象
-function jsonp(url,opts={}) {
-    return new Promise((resolve,reject)=>{
-        JSONP(url,opts, (err,data)=> {
-            if (err) reject(err);
-            resolve(data);
-        })
-    })
-}
+
 
 class SouInput extends Component{
     constructor(){
@@ -54,15 +49,12 @@ class SouInput extends Component{
             sou({cityId:55,stye:-1,kw:this.state.val})
             .then(
                
-                res=>{
-                    
-                    
-                    if(res.data.movies){console.log(res.data.movies.list)
+                res=>{if(this.state.val!==""){if(res.data.movies.list){console.log(res.data.movies.list)
 
                     for(let i = 0 ;i<=res.data.movies.list.length-1;i++){
                         res.data.movies.list[i].img=res.data.movies.list[i].img. replace(/w.h/, "148.208")
                     }   
-                    store.changelist(res.data.movies.list)}
+                    store.changelist(res.data.movies.list)}}else{window.location.href="movies"}
                 }
             )
             //https://www.baidu.com/s?wd=xxx  百度的查询接口

@@ -18,7 +18,7 @@ class Nowmovies extends React.Component {
   }
   
   componentDidMount() {
-    console.log(1)
+    // console.log(1)
     getmovies()
     
       .then(res => {
