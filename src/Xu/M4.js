@@ -17,7 +17,7 @@ class Willmovies extends React.Component {
     getmov()
 
       .then(res => {
-        console.log(res);
+        // console.log(res);
         for(let i = 0;i<=res.data.coming.length-1;i++)
         {
           console.log(res.data.coming[i].img)

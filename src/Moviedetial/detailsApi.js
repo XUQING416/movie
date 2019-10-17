@@ -26,7 +26,7 @@ export function  getPosterlist(params) {
    })
  }
  export function getviewpep(params) {
-  console.log(params)
+  // console.log(params)
   return axios({
    url:"/apiasgard/asgardapi/review/realtime/data.json?movieId=",
    method:'get',

@@ -21,8 +21,13 @@ export const getmov2 = (params) => axios({
 //         methods:"get",
 //         params
 //     })
-export const getmov3 = (params) => axios({
-    url: "/maoyan/cinemaDetail?cinemaId=24466",
+// export const getmov3 = (params) => axios({
+//     url: "/maoyan/cinemaDetail?cinemaId=24466",
+//     methods: "get",
+//     params
+// })http://m.maoyan.com/ajax/cinemaAjaxDetail?cinemaId=24466
+export const getmov4 = (params) => axios({
+    url: "/maoyan/cinemaAjaxDetail",
     methods: "get",
     params
 })

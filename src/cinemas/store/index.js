@@ -4,7 +4,7 @@ import {observable,action} from "mobx"
 // import axios from 'axios'
 import { getcinemasList,getcinemasdetail } from '../cinemasApi'
 
-class Store{
+class Store1{
 @observable cinemas=[]
 @observable cinemasDate=[]
 @action getCinemasList(){  
@@ -23,4 +23,4 @@ class Store{
 
 
 
-export default new Store()
+export default new Store1()

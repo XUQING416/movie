@@ -9,6 +9,7 @@ class store {
     @observable token=localStorage.getItem("token")
     @observable uId = localStorage.getItem("uId")
     @observable id =  localStorage.id
+    @observable cid =  localStorage.cid
     @action async getPersonal () {              
         let data = []
         await Login({"username":this.email,"password":this.password}) 
@@ -19,7 +20,7 @@ class store {
         localStorage.nickname = res.data.userInfo.nickname 
         this.token = res.data.token
         localStorage.setItem("token", res.data.token)
-        console.log(res)
+        // console.log(res)
         data=res.data       
         })
         return data

@@ -73,14 +73,14 @@ import store from "../xiao/store"
                                 <li><img src='//p1.meituan.net/movie/c43af5e137d4f2bde72e635bfc16dbdc32830.jpg@160w_224h_1e_1c'></img></li>
                                 <li><img src='//p1.meituan.net/moviemachine/269c9ce921839e34a28dbf88f451299c36850.jpg@160w_224h_1e_1c'></img></li>
                                 <li><img src='//p1.meituan.net/movie/b9e72fed100880e2866bc55562052ab351758.jpg@160w_224h_1e_1c'></img></li>
-                                <li><img src='//p0.meituan.net/movie/a42e5da8e35951fb718efb9b89be1d0233150.jpg@160w_224h_1e_1c'></img></li> 
+                                
                             </ul>
                             <ul className='actorname'>
                                 <li>刘伟强</li>
                                 <li>张涵予</li>
                                 <li>欧豪</li>
                                 <li>杜江</li>
-                                <li>张天爱</li>
+                                
                             </ul>
                         </div>
                         <div className='actorspictrue'><div>视频剧照</div><div>全部剧照</div></div>

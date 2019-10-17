@@ -24,7 +24,7 @@ class Nowmovies extends React.Component {
         console.log(res.data.movieList)
         for(let i = 0;i<=res.data.movieList.length-1;i++)
         {
-          console.log(res.data.movieList[i].img)
+          // console.log(res.data.movieList[i].img)
           res.data.movieList[i].img = res.data.movieList[i].img.replace(/w.h/, "148.208")
         }
         this.setState({

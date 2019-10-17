@@ -4,13 +4,14 @@ import Register from "./xiao/register"
 import Login from "./xiao/login"
 import Moviedetial from "./Moviedetial/moviedetial"
 import Headdetails from'./Moviedetial/Headdetails'
+import Cidetail from "./Xu/C1"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends React.Component {
     render() {
         return (
           <Router>
-          
+          <Route path="/cinemasdetial" component={Cidetail} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/moviedetial" component={Moviedetial} />
