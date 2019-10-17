@@ -31,3 +31,11 @@ export const getmov4 = (params) => axios({
     methods: "get",
     params
 })
+
+
+
+export const sou = (params)=> axios({
+    url: "/maoyan/search",
+    methods: "get",
+    params
+})

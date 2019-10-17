@@ -16,6 +16,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/moviedetial" component={Moviedetial} />
             <Route path='/details' component={Headdetails} />
+            
             <Route component={Tabbars} exact />
                 
             
