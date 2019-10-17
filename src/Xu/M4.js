@@ -36,8 +36,11 @@ class Willmovies extends React.Component {
 
 
   }
-
-
+  componentWillReceiveProps(){
+    console.log(1)
+    return true
+  }
+  
   render() {
     // console.log(this.state.users);
     const arr2 = this.state.users

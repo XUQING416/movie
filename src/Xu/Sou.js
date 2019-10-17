@@ -18,6 +18,9 @@
 // export default SouInput
 import React,{Component} from 'react'
 import ReactDOM,{render} from 'react-dom'
+import { sou} from "./api"
+import store from "../xiao/store"
+import { observer } from "mobx-react"
 
 // import PropTypes from 'prop-types';
 import JSONP from  'jsonp'
@@ -31,7 +34,7 @@ function jsonp(url,opts={}) {
         })
     })
 }
- 
+
 class SouInput extends Component{
     constructor(){
         super();
@@ -42,36 +45,26 @@ class SouInput extends Component{
         }
     }
     handleChange = async (e)=>{
-        this.setState({val:e.target.value});//http://m.maoyan.com/ajax/search?kw=w&cityId=55&stype=-1
-        let {s} = await  jsonp("http://m.maoyan.com/ajax/search?cityId=55&stype=-1&kw="+this.state.val,{param:"cb"});
-        this.setState({arr:s});
+        this.setState({val:e.target.value});//http://m.maoyan.com/ajax/search?kw=w&cityId=55&stype=-
+        
     }
-    handleKeyUp= (e)=>{
-        let keyCode = e.keyCode;
-        if (keyCode === 38 || keyCode === 40) {
-            if (keyCode === 38){
-                this.setState({index:this.state.index-1})
-                if (this.state.index<0){
-                    this.setState({index:this.state.arr.length-1});
-                }
-                //根据上下键切换，则给表单时面赋不同的值
-                e.target.value=this.state.arr[this.state.index+1];
-                this.setState({val:e.target.value});
-            } else {
-                this.setState({index:this.state.index+1})
-                if (this.state.index >= this.state.arr.length-1) {
-                    this.setState({index:-1});
-                }
-                //根据上下键切换，则给表单时面赋不同的值
-                e.target.value=this.state.arr[this.state.index+1];
-                this.setState({val:e.target.value});
-            }
-        }
-    }
+    
     handleKeyDown= (e)=>{
         if (e.keyCode ===13){
+            sou({cityId:55,stye:-1,kw:this.state.val})
+            .then(
+               
+                res=>{if(res.data.movies.list){console.log(res.data.movies.list)
+
+                    for(let i = 0 ;i<=res.data.movies.list.length-1;i++){
+                        res.data.movies.list[i].img=res.data.movies.list[i].img. replace(/w.h/, "148.208")
+                    }   
+                    store.changelist(res.data.movies.list)}}
+            )
             //https://www.baidu.com/s?wd=xxx  百度的查询接口
-            window.open('http://m.maoyan.com/ajax/search?cityId=55&stype=-1&kw=' + this.state.val, '_blank');
+          
+
+            
             this.refs.input.focus();
         }
     }
@@ -79,24 +72,14 @@ class SouInput extends Component{
         //生命周期，在组件加载完成后，让input聚焦 (focus)
         this.refs.input.focus();
     }
-    handleMouseEnter=(key,item,event)=>{
-        this.setState({index:key,val:item});
-        this.refs.input.value = item;
-    }
-    handleClick =()=>{
-        window.open('http://m.maoyan.com/ajax/search?cityId=55&stype=-1&kw=' + this.state.val, '_blank');
-        this.refs.input.focus();
-    }
+    
+   
     render(){
         
         return (
             <div className="Movies-input">
-                <input type="text" ref='input' defaultValue={this.state.val} onChange={this.handleChange} onKeyUp={this.handleKeyUp}  onKeyDown={this.handleKeyDown} className='form-control' placeholder='    输入你想看的电影名'/>
-                <ul className='list-group'>
-                    {this.state.arr.map((item,key)=>{
-                        return  <li onClick={this.handleClick} onMouseEnter={(event)=>this.handleMouseEnter(key,item,event)} className={key===this.state.index ? 'list-group-item active' :"list-group-item"} key={key}>{item}</li>
-                    })}
-                </ul>
+                <input type="text" ref="input" value={this.state.val} onChange={this.handleChange}  onKeyDown={this.handleKeyDown} className='form-control' placeholder='    输入你想看的电影名'/>
+                
                 
             </div>
         )
