@@ -66,7 +66,7 @@ class Login extends React.Component{
   render(){
     return(
       <div >
-        <div className={mycss.headxu} ><span style={{display:"block",float:"left",height:"100px",width:"100px",background:'url(' + require("./返回.png") + ') no-repeat center center'}} 
+        <div className={mycss.headxu} ><span style={{display:"block",float:"left",height:"100px",width:"100px",background:'url(' + require("./ff.png") + ') no-repeat center center'}} 
         onClick={this.fallback.bind(this)}></span>猫眼电影</div>
         <Tabs tabs={tabs}
           initialPage={0}

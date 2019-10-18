@@ -24,11 +24,11 @@ class My extends React.Component{
             </div>
             <nav style={{background:"white"}} className={mycss.navxu}>
                 <div>
-                    <p className={mycss.pxu} style={{background:"#FF605A",width:"70px",height:"70px"}}><img src={require('./电影.png')}/></p>
+                    <p className={mycss.pxu} style={{background:"#FF605A",width:"70px",height:"70px"}}><img src={require('./dd.png')}/></p>
                     电影
                 </div>
                 <div>
-                    <p className={mycss.pxu} style={{background:"#40D6C2",width:"70px",height:"70px"}}><img src={require('./商城.png')}/></p>
+                    <p className={mycss.pxu} style={{background:"#40D6C2",width:"70px",height:"70px"}}><img src={require('./ss.png')}/></p>
                     商城
                 </div>
             </nav>

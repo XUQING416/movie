@@ -113,13 +113,13 @@ if (path == "/register"||path == "/login"||path == "/moviedetial") {
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url('+require("./cinemas/imgs/影院A (2).png")+') center center /  21px 21px no-repeat' }}
+              background: 'url('+require("./cinemas/imgs/yy2.png")+') center center /  21px 21px no-repeat' }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url('+require("./cinemas/imgs/影院A (1).png")+') center center /  21px 21px no-repeat' }}
+              background: 'url('+require("./cinemas/imgs/yy1.png")+') center center /  21px 21px no-repeat' }}
             />}
             title="影院"
             key="cinemas"

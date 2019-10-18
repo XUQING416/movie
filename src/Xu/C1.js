@@ -64,9 +64,9 @@ class Cidetail extends React.Component {
              
             <h1 className="C1-h1">{arr1.nm}</h1>
 
-            <p className="C1-p1"><img src={[require("./img/电话.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.tel}</p>
-            <p className="C1-p1"><img src={[require("./img/定位.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.addr}</p>
-            <p className="C1-p1"><img src={[require("./img/喇叭.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.notice}</p>
+            <p className="C1-p1"><img src={[require("./img/phone.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.tel}</p>
+            <p className="C1-p1"><img src={[require("./img/dw.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.addr}</p>
+            <p className="C1-p1"><img src={[require("./img/la.png")]}/>&nbsp;&nbsp;&nbsp;{arr1.notice}</p>
             <p className="C1-p2">特色信息</p>
             {arr2.map((item, index) => (<div key={index} className="C1-ok" >
                 <p className="C1-p3"><span >{item.tag}</span>{item.desc}</p>
